@@ -6,12 +6,28 @@ class Togglecomp extends React.Component{
     constructor(){
         super();
         this.state = {
-            show: true
+            show: true,
+            count: 42
         }
+    }
+    incrementCount= () => {
+        this.setState({
+            count:this.state.count+1
+        })
+    }
+    decrementCount= () => {
+        this.setState({
+            count:this.state.count-1
+        })
     }
     render(){
         return(
             <div>
+                <div>
+                    <h2 className="counter">Counter: {this.state.count}</h2>
+                    <button className="counter-button"  title={"increment"} onClick={this.incrementCount} >Increase</button>
+                    <button className="counter-button"  title={"decrement"} onClick={this.decrementCount} >Decrease</button>
+                </div>
                 <SeperatorComp />
                 
                 <div>toggle section - </div>
